@@ -52,7 +52,11 @@ function deleteTodo (e){
         const todo = item.parentElement;
 
         //Animation
-        todo.remove();
+        todo.classList.add("fade");
+        todo.addEventListener("transitionend", function(){
+            todo.remove();
+        });
+        
     }
 
     //Check Mark
